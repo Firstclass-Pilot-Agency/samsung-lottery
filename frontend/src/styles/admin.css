@@ -1,0 +1,122 @@
+.adminSection h1{
+    font-size: 3.5rem;
+}
+.adminSection .top{
+    padding: 50px 40px;
+}
+.usersTotal{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px 50px;
+}
+.boxUser{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+.boxUser h1 {
+    font-size: 6rem;
+    font-weight: 800;
+}
+.boxUser p {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.topButtons {
+    display: flex;
+    justify-content: center;
+}
+.topButtons button{
+    width: 80%;
+}
+.adminSection .buttom{
+    padding: 50px 40px;
+}
+.adminSection .buttom .MainText h1{
+    font-size: 2rem;
+}
+
+
+.topTags, .UserTags{
+    background: white;
+    color: black;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+
+.Name, .Phone, .User {
+    min-width: 160px;
+    width: 200px;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+    padding-bottom: 3px;
+}
+.User{
+    max-width: 160px;
+    overflow-x: hidden;
+}
+.WinId, .Winner{
+    font-size: 1.1rem;
+    min-width: 80px;
+    width: 100px;
+    height: fit-content;
+    font-weight: 500;
+    display: flex;
+    justify-items: center;
+}
+.tagWrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.n-mobile-d{
+    display: none;
+}
+.checkbox{
+    display: block;
+    margin: auto;
+    justify-items: center;
+}
+
+
+.authSection-Admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.wrapAuth{
+    height: fit-content;
+    width: 300px;
+    text-align: center;
+}
+.wrapAuth h1{
+    font-size: 3rem;
+}
+.wrapAuth p{
+    font-size: 1rem;
+}
+.wrapAuth form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+.adminInput{
+    width: 200px;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+    background: white;
+}
+.adminInput::placeholder{
+    color: rgba(28, 28, 28, 0.493);
+}
+.buttonAdmin{
+    background: blue;
+    color: white;
+    zoom: 80%;
+}

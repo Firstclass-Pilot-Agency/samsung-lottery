@@ -1,0 +1,301 @@
+.heroSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 30px 0px;
+    height: calc(100vh - 100px);
+    zoom: 98%;
+}
+.heroSection h1{
+    text-align: center;
+}
+.heroSection p{
+    text-align: center;
+    padding:20px 30px;
+}
+.heroSection button{
+    margin-top: 20px;
+}
+
+
+
+.WinnerSection .top {
+    margin-bottom: 80px;
+    margin: 150px 50px 0px;
+}
+.WinnerSection .bottom {
+    overflow-x: scroll;
+    margin: 100px 20px;
+    padding: 0px 0px;
+}
+/* .WinnerSection .bottom::-webkit-scrollbar{
+    display: none;
+} */
+
+.WinnerSection .top h1{
+    width: 200px;
+}
+.WinnerSection .top p{
+    padding: 40px 0 30px ;
+}
+.slideCard .winneerImage{
+    height: 200px;
+    width: 250px;
+    background: white;
+    border-radius: 20px 20px 0 0 ;
+}
+.slideCard .winneerInfo{
+    width: 250px;
+    background: white;
+    margin-top: 25px;
+    border-radius:0 0 20px 20px ;
+    color: black;
+    padding: 20px 0px;
+}
+.slideCard .winneerInfo p{
+    padding: 0 20px;
+}
+.extraInfo{
+    display: flex;
+    justify-content: space-between;
+}
+.extraInfo p{
+    font-weight: 600;
+    opacity: .9;
+}
+.winnerSlide{
+    display: flex;
+    gap: 50px;
+}
+
+.AboutSection{
+
+}
+.AboutSection .banner{
+    height: 300px;
+    background: green;
+    margin: 50px 20px 0px;
+    border-radius: 20px;
+}
+.AboutSection .top{
+    margin: 50px 50px 0px;
+}
+.AboutSection .bottom{
+    
+}
+.video{
+   height: 300px;
+    background: green;
+    margin: 50px 0px 60px;
+}
+.justInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 50px 50px 0px;
+}
+.AboutSection .top p{
+    padding: 40px 0 30px ;
+}
+
+.StepSection{
+
+}
+.StepSection .top{
+    display: flex;
+    flex-direction: column;
+    margin: 150px 50px 0px;
+}
+.StepSection .bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 50px 50px 0px;
+}
+.StepSection .top h1{
+    font-size: 3rem;
+}
+.StepSection .top p{
+    padding: 40px 0 30px ;
+}
+.StepSection .bottom .stepBox{
+    height: 260px;
+    width: 320px;
+    background: white;
+    border-radius: 20px;
+}
+
+
+.FinalSection{
+    margin: 150px 20px;
+}
+.FinalSection .top h1{
+    text-align: center;
+    font-size: 4rem;
+}
+.FinalSection .top p{
+    text-align: justify;
+    padding: 40px 0 30px ;
+}
+
+
+
+.mobilePropmt{
+    position: fixed;
+    color: black;
+    /* background: white; */
+    bottom: -1px;
+    z-index: 9;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(30px);
+    box-shadow: 0 0 50px rgba(0, 0, 255, 0.227) ;
+    /* display: none */
+}
+.closeButton{
+    height: 30px;
+    width: 30px;
+    background: grey;
+    position: fixed;
+    top: 15vh;
+    right: 4vh;
+    z-index: 1000000;
+}
+
+.LotNot, .Ticket{
+    display: none;
+}
+.Check, .LotNot{
+    background: white;
+    padding: 40px 40px 40px;
+    flex-direction: column;
+}
+.Check h1{
+    font-weight: 800;
+    width: 300px;
+    font-size: 3.4rem;
+    padding: 10px 0 40px;
+}
+.Check button, .LotNot button{
+    background: black;
+    color: white;
+}
+.buttonWrap{
+    margin-top: 30px;
+    display: flex;
+    justify-content: left;
+}
+.LotNot h1{
+    font-weight: 800;
+    font-size: 3rem;
+    padding: 0px 0 20px;
+    text-align: center;
+}
+.LotNot p{
+    text-align: center;
+}
+.warnBox{
+    height: 100px;
+    width: 100px;
+}
+
+.Ticket{
+    margin: 40px 50px 0px;
+    background: black;
+    position: relative;
+}
+.Tick{
+    background: white;
+    width: 100%;
+    height: 69vh;
+    border-radius: 20px 20px  0 0;
+}
+
+.photoI{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.circleImg{
+    height: 70px;
+    width: 70px;
+    background: red;
+}
+.Info{
+}
+
+.photoI h1{
+    font-size: 1.4rem;
+}
+.wrapCot{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px  30px;
+}
+.CotHead{
+    font-size: .9rem;
+}
+.CotText{
+    font-size: 1rem;
+    font-weight: 800;
+}
+.lastBot{
+    padding: 0 20px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    zoom: 70%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.lastBot .inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    padding: 30px 10px;
+    border-radius: 25px 25px 0 0;
+    width: 250px;
+}
+.lastBot .inner p:nth-child(1){
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0px 0 10px;
+    color: white;
+}
+.lastBot .inner p:nth-child(2){
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: white;
+}
+
+.content, .photoI{
+    transform: translateY(140px);
+}
+
+.cut{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: -30px;
+    top: 60px;
+}
+.lineCut{
+    /* height: 0; */
+    width: 220px;
+    border-bottom: 4px dashed black;
+}
+.Ocut{
+    height: 60px;
+    width: 60px;
+    border-radius: 1000px;
+    background: black;
+}
