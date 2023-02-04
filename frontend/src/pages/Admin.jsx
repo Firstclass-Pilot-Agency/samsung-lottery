@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { authAdmin } from "../lotterydb/admin";
-import { createUser, getUsers } from "../lotterydb/usersService";
+import { DeleteUser, addWinner, createUser, getUsers } from "../lotterydb/usersService";
 import { useNavigate } from "react-router-dom";
 
 export default function Dashboard() {
@@ -70,29 +70,71 @@ function AdminAuth(props) {
 
 function Admin(props){
     const [users, setUsers] = useState([])
+    const [winnerCount, setWinCount] = useState(0)
+    const [userCount, setUserCount] = useState(0)
     const nav = useNavigate()
-    let winnerCount = 0
+    const bottom = useRef()
+    const userTager = useRef()
     useEffect(() => {
         getUsersm()
-    }, [])
+        setUserCount(users.length)
+    }, [users])
     const handleCreate = () => {
         nav('/admin/createuser')
     }
-    const getUsersm = async () => {
-        await getUsers().then((data) => {
-            setUsers(data.userList.map((user) => {
 
-                if (user.winner === true) {
-                    winnerCount = winnerCount + 1
+    const getUsersm = async () => {
+        
+        await getUsers().then((data) => {
+            setUsers(data.userList.map((da) => {
+                let userID = da._id
+                
+                async function winner(id) {
+                    await addWinner(id).then((data) => {
+                        
+                        console.log(data);
+                        setWinCount(winnerCount + 1)
+                    }).catch((err) => {
+                        console.log(err);
+                    })
                 }
+                function handleWinner() {
+                    winner(userID)
+                }
+                
+                async function Del(id) {
+                    await DeleteUser(id).then((data) => {
+                        console.log(data);
+                    }).catch((err) => {
+                        console.log(err);
+                    })
+                }
+                function DelUser() {
+                    Del(userID)
+                    document.getElementById(da._id).style.display = 'none'
+                    setUserCount(userCount - 1)
+                }
+                
                 return (
-                    <div className="UserTags">
+                    <div key={da._id} id={da._id }  className="UserTags" ref={userTager}>
                         <div className="tagWrap">
-                            <p className="Name">{user.name}</p>
-                            <p className="Phone n-mobile-d">{user.phoneNumber}</p>
-                            <p className="User n-mobile-d">{user._id}</p>
-                            <p className="WinId">{user.lotteryId}</p>
-                            <button className="buttonAdmin n-mobile-d">Add winner</button>
+                            <p className="Name">{da.name}</p>
+                            <p className="Phone n-mobile-d">{da.phoneNumber}</p>
+                            <p className="User n-mobile-d">{da._id}</p>
+                            <p className="WinId">{da.lotteryId}</p>
+                            <button className="buttonAdmin n-mobile-d" onClick={handleWinner}>Add winner</button>
+                        </div>
+
+                        <div className="bottomSectionUser" ref={bottom}>
+                            <p className="tagsButtom" n-mobile>Phone</p>
+                                <p className="Phone n-mobile"> {da.phoneNumber}</p>
+                            <p className="tagsButtom n-mobile">Id</p>
+                                <p className="User n-mobile">{da._id}</p>
+                                <div className="buttonButWrap">
+                                <button className="buttonAdmin n-mobile" onClick={handleWinner}>Add winner</button>
+                                <button className="buttonAdmin " onClick={DelUser}>Delete User</button>
+                                </div>
+
                         </div>
                     </div>
                 )
@@ -119,7 +161,7 @@ function Admin(props){
                                 <p>Winners</p>
                             </div>
                             <div className="boxUser">
-                                <h1>{ users.length}</h1>
+                                <h1>{ userCount}</h1>
                                 <p>Users</p>
                             </div>
                         </div>

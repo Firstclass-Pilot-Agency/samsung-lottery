@@ -150,7 +150,7 @@
     z-index: 9;
     width: 100%;
     height: 100vh;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(30px);
@@ -205,15 +205,15 @@
 }
 
 .Ticket{
-    margin: 40px 50px 0px;
-    background: black;
+    padding: 40px 50px 0px;
     position: relative;
+    width: 300px;
 }
 .Tick{
     background: white;
     width: 100%;
     height: 69vh;
-    border-radius: 20px 20px  0 0;
+    border-radius: 20px;
 }
 
 .photoI{
@@ -230,7 +230,11 @@
 }
 
 .photoI h1{
+    padding-top: 20px;
     font-size: 1.4rem;
+}
+.photoI p{
+    font-size: 1rem;
 }
 .wrapCot{
     display: flex;
@@ -278,7 +282,7 @@
 }
 
 .content, .photoI{
-    transform: translateY(140px);
+    transform: translateY(80px);
 }
 
 .cut{

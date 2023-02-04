@@ -22,10 +22,18 @@ export const addWinner = async (id)=>{
         id: id
     }
     const winner = await axios.put(url + "/users/addwinner", data);
-    return winner
+    return winner.data
 }
 
 export const checkLottery = async (data) => {
     const lot = await axios.post(url + "/users/checkLot", data);
     return lot;
+};
+
+export const DeleteUser = async (id) => {
+    const data = {
+        id: id,
+    };
+    const del = await axios.post(url + "/users/del", data);
+    return del.data;
 };

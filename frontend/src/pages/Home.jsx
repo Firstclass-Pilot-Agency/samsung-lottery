@@ -6,6 +6,13 @@ export default function Home(){
     const Info = useRef()
     const NotFound = useRef()
     const Titcket = useRef()
+    const [userData, setUserData] = useState({
+        name: "",
+        _id: "",
+        phoneNumber: "",
+        lotteryId: "",
+        winner: "",
+    })
 
     useEffect(() => {
         // NotFound.current.style.display = 'none'
@@ -40,19 +47,35 @@ export default function Home(){
 
     async function CheckInDB(data) {
         await checkLottery(data).then((info) => {
-            Info.current.style.display = "none"
-            Titcket.current.style.display = 'block'
             console.log(info);
+
+            if (info.data.status === "success") {
+                Info.current.style.display = "none"
+                Titcket.current.style.display = 'block'
+                setUserData(info.data.data)
+                alert(info.data.message)
+            } else {
+                Info.current.style.display = "none"
+                NotFound.current.style.display = 'block'
+                alert(info.data.message)
+            }
+            
         }).catch((err) => {
-            console.log(err);
-            alert('server error')
+            console.log(err); 
+            alert(err.response.data.message)
         })
     }
     function openCheck() {
         parent.current.style.display = 'flex'
+        Info.current.style.display = "flex"
+        NotFound.current.style.display = 'none'
+        Titcket.current.style.display = 'none'
     }
     function closeCheck() {
         parent.current.style.display = 'none'
+        Info.current.style.display = "flex"
+        NotFound.current.style.display = 'none'
+        Titcket.current.style.display = 'none'
     }
 
 
@@ -223,7 +246,7 @@ export default function Home(){
                             is not found.
                         </p>
                         <div className="buttonWrap">
-                            <button type="submit">Try Again</button>
+                            <button onClick={openCheck} type="submit">Try Again</button>
                         </div>
                     </div>
 
@@ -231,34 +254,28 @@ export default function Home(){
                     <div className="Ticket" ref={Titcket}>
                         <div className="Tick">
 
-                            <div className="cut">
-                                <div className="Ocut"></div>
-                                <div className="lineCut"></div>
-                                <div className="Ocut"></div>
-                            </div>
-
                             <div className="Info">
                                 <div className="photoI">
                                     <div className="circleImg"></div>
-                                    <h1>Name Name</h1>
-                                    <p>id</p>
+                                    <h1>{ userData.name}</h1>
+                                    <p>{ userData._id}</p>
                                 </div>
                                 <div className="content">
                                     <div className="wrapCot">
                                         <div className="CoTBox">
                                             <p className="CotHead">Phone Number</p>
-                                            <p className="CotText">038***6377</p>
+                                            <p className="CotText">{userData.phoneNumber}</p>
                                         </div>
                                         <div className="CoTBox">
                                             <p className="CotHead">Lottery Id</p>
-                                            <p className="CotText">3026342-az</p>
+                                            <p className="CotText">{userData.lotteryId}</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="lastBot">
                                     <div className="inner">
                                         <p>Stauts</p>
-                                        <p>Pending</p>
+                                        <p>{userData.winner ? 'You Won' : "Pending"}</p>
                                     </div>
                                 </div>
                             </div>

@@ -9,7 +9,7 @@ const router = express.Router()
 router.get('/users', getUsers);
 router.post("/users/new", addUser);
 router.put("/users/addwinner", addWinner);
-router.delete("/users/del", deleteUser);
+router.post("/users/del", deleteUser);
 router.post("/users/checkLot", checkLot);
 
 router.post('/admin', authAdmin)

@@ -115,4 +115,11 @@
 .n-mobile-d{
     display: block;
 }
+.n-mobile{
+    display: none;
+}
+.User{
+    max-width: 160px;
+    overflow-x: hidden;
+}
 }

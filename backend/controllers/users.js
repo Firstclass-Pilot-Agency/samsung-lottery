@@ -49,11 +49,14 @@ const addUser = express_async(async (req, res) => {
 const addWinner = express_async(async (req, res) => {
     const { id } = req.body;
 
-    const winner = User.findByIdAndUpdate(id, {winner: true})
-
+    const winner = await User.findByIdAndUpdate(id, {winner: true})
     if (winner) {
         res.status(200).json({
-            message: "Added to winning List",
+            message: "Added to winning Libst",
+            guns: "big ones",
+            data: winner,
+            winner: winner.winner,
+            id: winner._id,
             status: "success",
         });
     }
@@ -83,16 +86,22 @@ const deleteUser = express_async(async (req, res) => {
 
 const checkLot = express_async(async (req, res) => { 
     const { phoneNumber, lotteryId } = req.body;
-    console.log(req.body);
+
+
     if (phoneNumber && lotteryId) {
-        const lot = User.find(lotteryId);
-        if (lot) {
-            res.status(200).json({
-                message: "Data Found",
-                data: lot,
-                status: "success",
-            });
-        }
+            const lot = await User.findOne({ lotteryId });
+            if (lot && lot.phoneNumber === phoneNumber) {
+                res.status(200).json({
+                    message: "Lottery Id Found",
+                    data: lot,
+                    status: "success",
+                });
+            } else {
+                res.status(400).json({
+                    message: "Lottery Id or PhoneNumber Not Found",
+                    status: "error",
+                });
+            }
         return
     }
 

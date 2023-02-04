@@ -54,10 +54,7 @@
     font-weight: 600;
     padding-bottom: 3px;
 }
-.User{
-    max-width: 160px;
-    overflow-x: hidden;
-}
+
 .WinId, .Winner{
     font-size: 1.1rem;
     min-width: 80px;
@@ -119,4 +116,31 @@
     background: blue;
     color: white;
     zoom: 80%;
+}
+.n-mobile{
+    display: block;
+}
+.bottomSectionUser{
+    display: none;
+    flex-direction: column;
+    justify-content: right;
+    align-items: flex-end;
+    margin-top: 20px;
+    padding: 0 30px;
+}
+.UserTags:hover .bottomSectionUser{
+    display: flex;
+}
+.n-mobile{
+    width: fit-content;
+    text-align: right;
+}
+.buttonButWrap{
+    display: flex;
+    margin-top: 30px;
+    gap: 30px;
+}
+.tagsButtom{
+    font-size: 1.1rem;
+    font-weight: 800;
 }
