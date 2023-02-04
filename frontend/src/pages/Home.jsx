@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { checkLottery } from "../lotterydb/usersService";
 
+import img1 from '../assets/img1.jpeg'
+import img2 from '../assets/img2.jpeg'
+import img3 from '../assets/img3.jpeg'
+import img4 from '../assets/img4.jpeg'
+
 export default function Home(){
     const parent = useRef()
     const Info = useRef()
@@ -81,15 +86,32 @@ export default function Home(){
 
     return (
         <>
+            <div className="heroSection">
+                <h1>Samsung lottery winners</h1>
+                <p>
+                    Now Samsung has decided to give lottery
+                    prizes to his regular customers.
+                    Claim yours now.
+                </p>
+                <button onClick={openCheck}>Check Your Number</button>
+            </div>
             <section>
-                <div className="heroSection">
-                    <h1>Samsung lottery winners</h1>
+                
+
+                <div className="infoSection">
                     <p>
-                        Now Samsung has decided to give lottery
-                        prizes to his regular customers.
-                        Claim yours now.
+                        Well It's a promotional program held for
+                        Instagram WhatsApp and tiktok and Twitter
+                        members worldwide, while participants were
+                        selected through random selection in our
+                        Computerized System (C.T.S.S.) from a
+                        database of over WhatsApp users from
+                        Africa 🇿🇦 America 🇻🇮  Asia 🌏, Suriname 🇸🇷,
+                        Australia 🇦🇺  🇨🇦 Canada  Barbuda 🇦🇬  Europe 🇪🇺
+                        Middle East,the 🇧🇸 Bahamas  Trinidad 🇹🇹 and
+                        New Zealand 🇳🇿 Curaca'o 🇨🇼, st.
+                        Louis 🇬🇹Pakistan 🇵🇰 Australia 🇦🇺
                     </p>
-                    <button onClick={openCheck}>Check Your Number</button>
                 </div>
 
                 <div className="WinnerSection">
@@ -107,67 +129,25 @@ export default function Home(){
 
                             <div className="slideCard">
                                 <div className="winneerImage">
-
-                                </div>
-                                <div className="winneerInfo">
-                                    <p>Name</p>
-                                    <div className="extraInfo">
-                                        <p>Ammount</p>
-                                        <p>Number</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="slideCard">
-                                <div className="winneerImage">
-
-                                </div>
-                                <div className="winneerInfo">
-                                    <p>Name</p>
-                                    <div className="extraInfo">
-                                        <p>Ammount</p>
-                                        <p>Number</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="slideCard">
-                                <div className="winneerImage">
-
-                                </div>
-                                <div className="winneerInfo">
-                                    <p>Name</p>
-                                    <div className="extraInfo">
-                                        <p>Ammount</p>
-                                        <p>Number</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="slideCard">
-                                <div className="winneerImage">
-
-                                </div>
-                                <div className="winneerInfo">
-                                    <p>Name</p>
-                                    <div className="extraInfo">
-                                        <p>Ammount</p>
-                                        <p>Number</p>
-                                    </div>
+                                    <img src={img1} alt="" />
                                 </div>
                             </div>
                             <div className="slideCard">
                                 <div className="winneerImage">
-
-                                </div>
-                                <div className="winneerInfo">
-                                    <p>Name</p>
-                                    <div className="extraInfo">
-                                        <p>Ammount</p>
-                                        <p>Number</p>
-                                    </div>
+                                    <img src={img2} alt="" />
                                 </div>
                             </div>
+                            <div className="slideCard">
+                                <div className="winneerImage">
+                                    <img src={img3} alt="" />
+                                </div>
+                            </div>
+                            <div className="slideCard">
+                                <div className="winneerImage">
+                                    <img src={img4} alt="" />
+                                </div>
+                            </div>
+                
                         </div>
 
                         
@@ -202,11 +182,6 @@ export default function Home(){
                         <p>
                             Our prizes are provided to the customer after winning of lucky draw. 
                         </p>
-                    </div>
-                    <div className="bottom">
-                        <div className="stepBox"></div>
-                        <div className="stepBox"></div>
-                        <div className="stepBox"></div>
                     </div>
                 </div>
 

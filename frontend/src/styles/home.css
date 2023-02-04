@@ -1,10 +1,14 @@
+
 .heroSection{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px 30px 0px;
+    padding: 100px 30px ;
     height: calc(100vh - 100px);
+    background: url(https://i0.wp.com/en.mohamedovic.com/wp-content/uploads/2022/02/Samsung-Galaxy-Tab-S8-Wallpaper-Dark-Mohamedovic-01.webp?ssl=1);
+    background-blend-mode: multiply;
+    background-size: cover;
     zoom: 98%;
 }
 .heroSection h1{
@@ -25,13 +29,16 @@
     margin: 150px 50px 0px;
 }
 .WinnerSection .bottom {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     overflow-x: scroll;
     margin: 100px 20px;
-    padding: 0px 0px;
+    padding: 0px 60px;
 }
-/* .WinnerSection .bottom::-webkit-scrollbar{
+.WinnerSection .bottom::-webkit-scrollbar{
     display: none;
-} */
+}
 
 .WinnerSection .top h1{
     width: 200px;
@@ -40,14 +47,12 @@
     padding: 40px 0 30px ;
 }
 .slideCard .winneerImage{
-    height: 200px;
-    width: 250px;
-    background: white;
-    border-radius: 20px 20px 0 0 ;
+    /* height: 300px;
+    width: 250px; */
+    border-radius: 20px ;
 }
 .slideCard .winneerInfo{
     width: 250px;
-    background: white;
     margin-top: 25px;
     border-radius:0 0 20px 20px ;
     color: black;
@@ -55,6 +60,9 @@
 }
 .slideCard .winneerInfo p{
     padding: 0 20px;
+}
+.slideCard .winneerImage img{
+    width: 300px;
 }
 .extraInfo{
     display: flex;
@@ -66,6 +74,7 @@
 }
 .winnerSlide{
     display: flex;
+    flex-wrap: wrap;
     gap: 50px;
 }
 
@@ -74,8 +83,9 @@
 }
 .AboutSection .banner{
     height: 300px;
-    background: green;
+    background: url(https://cdn.arstechnica.net/wp-content/uploads/2022/04/GettyImages-1061811522-800x533.jpg);
     margin: 50px 20px 0px;
+    background-position-x: -150px;
     border-radius: 20px;
 }
 .AboutSection .top{
@@ -85,9 +95,11 @@
     
 }
 .video{
-   height: 300px;
-    background: green;
+   height: 400px;
+    background: url(https://wallpaperaccess.com/full/848978.jpg);
     margin: 50px 0px 60px;
+    background-size: cover;
+    background-position-y: -150px;
 }
 .justInfo{
     display: flex;
@@ -302,4 +314,8 @@
     width: 60px;
     border-radius: 1000px;
     background: black;
+}
+.infoSection{
+    padding: 130px 70px 70px;
+    text-align: center;
 }

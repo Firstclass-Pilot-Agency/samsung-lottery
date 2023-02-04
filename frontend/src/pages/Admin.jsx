@@ -118,7 +118,7 @@ function Admin(props){
                 return (
                     <div key={da._id} id={da._id }  className="UserTags" ref={userTager}>
                         <div className="tagWrap">
-                            <p className="Name">{da.name}</p>
+                            <p className="Name" style={{ color: da.winner ? 'green' : 'black',  }}>{da.name}</p>
                             <p className="Phone n-mobile-d">{da.phoneNumber}</p>
                             <p className="User n-mobile-d">{da._id}</p>
                             <p className="WinId">{da.lotteryId}</p>
@@ -156,10 +156,10 @@ function Admin(props){
                             <p>{ props.admin}</p>
                         </div>
                         <div className="usersTotal">
-                            <div className="boxUser">
+                            {/* <div className="boxUser">
                                 <h1>{winnerCount}</h1>
                                 <p>Winners</p>
-                            </div>
+                            </div> */}
                             <div className="boxUser">
                                 <h1>{ userCount}</h1>
                                 <p>Users</p>
