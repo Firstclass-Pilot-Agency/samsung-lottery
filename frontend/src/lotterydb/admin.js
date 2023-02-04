@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // handle Auth for admin
-const url = 'http://localhost:8000/api'
+const url = '/api'
 
 
 export async function authAdmin(token) {

@@ -1,5 +1,5 @@
 import axios from 'axios'
-const url = 'http://localhost:8000/api'
+const url = '/api'
 
 export const getUsers = async () => {
     const users = await axios.get(url+"/users")
