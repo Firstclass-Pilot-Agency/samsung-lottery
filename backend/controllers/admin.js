@@ -13,14 +13,16 @@ const authAdmin = express_async(async (req, res) => {
     // const salt = await bcrypt.genSalt(10);
     // const hashedtoken = await bcrypt.hash(token, salt);
 
-    // Admin.create({
+    // let newAdmin = await Admin.create({
     //     admin : 'admin',
     //     token: hashedtoken,
     // });
 
-    // res.status(200).json({
-    //     created: 'created admin'
-    // })
+    // if(newAdmin){
+    //     res.status(200).json({
+    //         created: 'created admin'
+    //     })
+    // }
 
     const admin = 'admin'
     if (token) {

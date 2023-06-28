@@ -44,5 +44,5 @@ else {
 
 // listen to for server
 app.listen(port, () => {
-    console.log(`SERVER: listening on port ${port}`);
+    console.log(`SERVER: listening on port ${port}`)
 })
